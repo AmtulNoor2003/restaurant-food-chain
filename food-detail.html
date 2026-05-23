@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Food Detail – FoodieExpress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="menu.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">🍕</div>
+      <span>Foodie<em>Express</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="#">Deals</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <a href="cart.html" class="nav-cart">
+      <i class="fas fa-bag-shopping"></i>
+      <span id="cartCount">0</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== BREADCRUMB ===== -->
+  <div class="breadcrumb-bar">
+    <a href="menu.html" class="back-link">
+      <i class="fas fa-arrow-left"></i> Back to Menu
+    </a>
+  </div>
+
+  <!-- ===== DETAIL SECTION ===== -->
+  <section class="detail-wrap" id="detailWrap">
+    <div class="detail-loader" id="detailLoader">
+      <div class="loader-ring"></div>
+    </div>
+    <!-- Content injected by JS -->
+  </section>
+
+  <!-- ===== RELATED ===== -->
+  <section class="related-wrap" id="relatedWrap" style="display:none">
+    <div class="results-meta">
+      <span>You Might Also Like</span>
+      <span class="count-badge">✨</span>
+    </div>
+    <div class="food-grid" id="relatedGrid"></div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-logo">🍕 FoodieExpress</div>
+    <p>© 2025 FoodieExpress · Made with ❤️ for your cravings</p>
+  </footer>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast">
+    <i class="fas fa-circle-check"></i>
+    <span id="toastMsg">Added to cart!</span>
+  </div>
+
+  <script src="menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', initDetailPage);
+  </script>
+</body>
+</html>

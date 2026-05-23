@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Menu – FoodieExpress</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,800;1,700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+  <link rel="stylesheet" href="menu.css"/>
+</head>
+<body>
+
+  <!-- ===== NAVBAR ===== -->
+  <nav class="navbar" id="navbar">
+    <a href="index.html" class="nav-logo">
+      <div class="logo-mark">🍕</div>
+      <span>Foodie<em>Express</em></span>
+    </a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="menu.html" class="active">Menu</a></li>
+      <li><a href="#">Deals</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <a href="cart.html" class="nav-cart">
+      <i class="fas fa-bag-shopping"></i>
+      <span id="cartCount">0</span>
+    </a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <header class="menu-hero">
+    <!-- Floating food blobs -->
+    <div class="float-blob blob-1">🍕</div>
+    <div class="float-blob blob-2">🍔</div>
+    <div class="float-blob blob-3">🥤</div>
+    <div class="float-blob blob-4">🍰</div>
+    <div class="float-blob blob-5">🔥</div>
+
+    <div class="hero-content">
+      <p class="hero-tag">✦ 100+ Dishes Available</p>
+      <h1>Our <em>Delicious</em><br>Menu</h1>
+      <p class="hero-sub">Fresh ingredients. Bold flavours. Delivered fast to your door.</p>
+    </div>
+
+    <!-- Decorative arc -->
+    <div class="hero-arc"></div>
+  </header>
+
+  <!-- ===== SEARCH + FILTER BAR ===== -->
+  <section class="toolbar-section">
+    <div class="toolbar">
+      <div class="search-box">
+        <i class="fas fa-magnifying-glass"></i>
+        <input type="text" id="searchInput" placeholder="Search dishes, cuisines…"/>
+        <button id="clearSearch" class="clear-x" aria-label="Clear"><i class="fas fa-xmark"></i></button>
+      </div>
+      <div class="filter-pills" id="categoryTabs">
+        <button class="pill active" data-cat="all">All</button>
+        <button class="pill" data-cat="pizza">🍕 Pizza</button>
+        <button class="pill" data-cat="burger">🍔 Burger</button>
+        <button class="pill" data-cat="drinks">🥤 Drinks</button>
+        <button class="pill" data-cat="desserts">🍰 Desserts</button>
+        <button class="pill" data-cat="bbq">🔥 BBQ</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RESULTS META ===== -->
+  <div class="results-meta" id="resultsMeta">
+    <span id="sectionTitle">All Items</span>
+    <span class="count-badge" id="itemCount">15 items</span>
+  </div>
+
+  <!-- ===== FOOD GRID ===== -->
+  <main class="food-grid-wrap">
+    <div class="food-grid" id="foodGrid"></div>
+    <div class="empty-state hidden" id="emptyState">
+      <span class="empty-icon">🔍</span>
+      <h3>Nothing found</h3>
+      <p>Try a different keyword or category</p>
+      <button onclick="document.getElementById('searchInput').value='';document.querySelector('.pill.active')?.click()" class="btn-ghost">Clear Search</button>
+    </div>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer">
+    <div class="footer-logo">🍕 FoodieExpress</div>
+    <p>© 2025 FoodieExpress · Made with ❤️ for your cravings</p>
+  </footer>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast">
+    <i class="fas fa-circle-check"></i>
+    <span id="toastMsg">Added to cart!</span>
+  </div>
+
+  <script src="menu.js"></script>
+</body>
+</html>
