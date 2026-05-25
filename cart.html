@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>3B Burger Cart</title>
+
+    <!-- External CSS file -->
+    <link rel="stylesheet" href="cart.css">
+
+    <!-- Font Awesome icons -->
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- HEADER SECTION (Banner with delivery info) -->
+<header class="hero-banner">
+
+    <img src="images/logo-banner.png" class="banner-image">
+
+    <div class="banner-overlay">
+
+        <!-- Delivery info boxes -->
+        <div class="top-info">
+
+            <!-- Delivery time -->
+            <div class="info-box">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <div>
+                    <h3>30-40 mins</h3>
+                    <p>Delivery Time</p>
+                </div>
+
+            </div>
+
+            <!-- Free delivery info -->
+            <div class="info-box">
+
+                <i class="fa-solid fa-motorcycle"></i>
+
+                <div>
+                    <h3>Free Delivery</h3>
+                    <p>On orders above Rs. 800</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- CART CONTAINER -->
+<div class="cart-wrapper">
+
+    <!-- Cart header -->
+    <div class="cart-top">
+
+        <h2>Your Cart</h2>
+
+        <span class="item-count">4 Items</span>
+
+    </div>
+
+    <!-- ITEM 1 -->
+    <div class="cart-card">
+
+        <img src="images/burger.jpg">
+
+        <div class="item-info">
+
+            <h3>Burger</h3>
+            <p>Rs. 500</p>
+
+            <!-- Quantity controls -->
+            <div class="quantity-box">
+
+                <button onclick="decreaseQuantity(0)">-</button>
+                <span id="qty0">2</span>
+                <button onclick="increaseQuantity(0)">+</button>
+
+            </div>
+
+        </div>
+
+        <div class="right-side">
+
+            <!-- Remove item button -->
+            <button class="delete-btn" onclick="removeItem(0)">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+
+            <!-- Subtotal for item -->
+            <h4>Rs. <span id="sub0">1000</span></h4>
+
+        </div>
+
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="cart-card">
+
+        <img src="images/pizza.jpg">
+
+        <div class="item-info">
+
+            <h3>Pizza</h3>
+            <p>Rs. 1200</p>
+
+            <!-- Quantity controls -->
+            <div class="quantity-box">
+
+                <button onclick="decreaseQuantity(1)">-</button>
+                <span id="qty1">1</span>
+                <button onclick="increaseQuantity(1)">+</button>
+
+            </div>
+
+        </div>
+
+        <div class="right-side">
+
+            <!-- Remove item button -->
+            <button class="delete-btn" onclick="removeItem(1)">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+
+            <!-- Subtotal for item -->
+            <h4>Rs. <span id="sub1">1200</span></h4>
+
+        </div>
+
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="cart-card">
+
+        <img src="images/drink.jpg">
+
+        <div class="item-info">
+
+            <h3>Drink</h3>
+            <p>Rs. 150</p>
+
+            <!-- Quantity controls -->
+            <div class="quantity-box">
+
+                <button onclick="decreaseQuantity(2)">-</button>
+                <span id="qty2">1</span>
+                <button onclick="increaseQuantity(2)">+</button>
+
+            </div>
+
+        </div>
+
+        <div class="right-side">
+
+            <!-- Remove item button -->
+            <button class="delete-btn" onclick="removeItem(2)">
+                <i class="fa-solid fa-trash"></i>
+            </button>
+
+            <!-- Subtotal for item -->
+            <h4>Rs. <span id="sub2">150</span></h4>
+
+        </div>
+
+    </div>
+
+    <!-- PROMO CODE SECTION -->
+    <div class="promo-box">
+
+        <input type="text" id="promoCode" placeholder="Enter promo code">
+
+        <button onclick="applyPromo()">Apply</button>
+
+    </div>
+
+    <!-- BILL SUMMARY SECTION -->
+    <div class="bill-box">
+
+        <div class="bill-row">
+            <span>Subtotal</span>
+            <span id="subtotal">2350</span> 
+        </div>
+
+        <div class="bill-row">
+            <span>Discount</span>
+            <span id="discount">0</span>
+        </div>
+
+        <hr>
+
+        <div class="bill-row total">
+
+            <span>Total Bill</span>
+
+            <span>
+                Rs. <span id="total">2350</span>
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- CHECKOUT BUTTON -->
+    <a href="checkout.html">
+        <button class="checkout-btn">
+            <i class="fa-solid fa-bag-shopping"></i>
+            Proceed To Checkout
+        </button>
+    </a>
+
+</div>
+
+</div>
+<!-- JS FILE LINK -->
+<script src="cart.js"></script>
+<!-- CUSTOM DIALOG BOX -->
+<div id="dialogBox" class="dialog-box">
+    <div class="dialog-content">
+        <p id="dialogMessage"></p>
+        <button onclick="closeDialog()">OK</button>
+    </div>
+</body>
+</html>

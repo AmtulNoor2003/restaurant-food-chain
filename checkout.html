@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
+
+<title>Checkout</title>
+
+<link rel="stylesheet" href="checkout.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+<!-- HEADER BANNER -->
+<header class="hero-banner">
+
+    <img src="images/logo-banner.png" class="banner-image">
+
+    <div class="banner-overlay">
+
+        <div class="top-info">
+
+            <div class="info-box">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <div>
+                    <h3>30-40 mins</h3>
+                    <p>Delivery Time</p>
+                </div>
+
+            </div>
+
+            <div class="info-box">
+
+                <i class="fa-solid fa-motorcycle"></i>
+
+                <div>
+                    <h3>Free Delivery</h3>
+                    <p>Above Rs. 800</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- MAIN CHECKOUT SECTION -->
+<div class="checkout-container">
+
+    <!-- LEFT SIDE FORM -->
+    <div class="left">
+
+        <!-- BACK BUTTON -->
+        <a href="cart.html" class="back-btn">
+            <i class="fa-solid fa-arrow-left"></i>
+            Back To Cart
+        </a>
+
+        <h1>Checkout</h1>
+        <p class="subtitle">Complete your order details</p>
+
+        <!-- FORM -->
+        <form id="checkoutForm">
+
+            <!-- NAME -->
+            <div class="input-group">
+                <label>Full Name</label>
+                <input type="text" id="name" placeholder="Enter your full name">
+            </div>
+
+            <!-- PHONE -->
+            <div class="input-group">
+                <label>Phone Number</label>
+                <input type="text" id="phone" placeholder="03XX XXXXXXX">
+            </div>
+
+            <!-- ADDRESS -->
+            <div class="input-group">
+                <label>Delivery Address</label>
+                <textarea id="address" placeholder="Enter your full address"></textarea>
+            </div>
+
+            <!-- PAYMENT METHODS -->
+            <h3 class="payment-title">Payment Method</h3>
+
+            <div class="payment-box">
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Cash On Delivery"
+                    onchange="showPaymentFields('cash')">
+
+                    <div class="payment-card">
+                        <i class="fa-solid fa-money-bill"></i>
+                        <span>Cash On Delivery</span>
+                    </div>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Card"
+                    onchange="showPaymentFields('card')">
+
+                    <div class="payment-card">
+                        <i class="fa-solid fa-credit-card"></i>
+                        <span>Visa / Debit Card</span>
+                    </div>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="JazzCash"
+                    onchange="showPaymentFields('jazzcash')">
+
+                    <div class="payment-card">
+                        <i class="fa-solid fa-mobile-screen"></i>
+                        <span>JazzCash</span>
+                    </div>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="EasyPaisa"
+                    onchange="showPaymentFields('easypaisa')">
+
+                    <div class="payment-card">
+                        <i class="fa-solid fa-wallet"></i>
+                        <span>EasyPaisa</span>
+                    </div>
+                </label>
+
+                <label class="payment-option">
+                    <input type="radio" name="payment" value="Bank Transfer"
+                    onchange="showPaymentFields('bank')">
+
+                    <div class="payment-card">
+                        <i class="fa-solid fa-building-columns"></i>
+                        <span>Bank Transfer</span>
+                    </div>
+                </label>
+
+            </div>
+
+            <!-- DYNAMIC PAYMENT FIELDS -->
+            <div id="dynamicFields"></div>
+
+            <!-- SUBMIT BUTTON -->
+            <button type="submit" class="place-order-btn">
+                <i class="fa-solid fa-bag-shopping"></i>
+                Place Order
+            </button>
+
+        </form>
+    </div>
+
+    <!-- RIGHT SIDE ORDER SUMMARY -->
+    <div class="right">
+
+        <h2>Order Summary</h2>
+
+        <div class="summary">
+
+            <div>
+                <span>Burger x2</span>
+                <span>1000</span>
+            </div>
+
+            <div>
+                <span>Pizza x1</span>
+                <span>1200</span>
+            </div>
+
+            <div>
+                <span>Drink x1</span>
+                <span>150</span>
+            </div>
+
+            <hr>
+
+            <div class="total-row">
+                <span>Total</span>
+                <span>2350</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- DIALOG POPUP -->
+<div class="dialog-box" id="dialogBox">
+
+    <div class="dialog-content">
+
+        <h2 id="dialogTitle">Success</h2>
+
+        <p id="dialogMessage">Order Placed</p>
+
+        <button onclick="closeDialog()">OK</button>
+
+    </div>
+
+</div>
+
+<script src="checkout.js"></script>
+
+</body>
+</html>
